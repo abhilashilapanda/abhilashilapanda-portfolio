@@ -402,13 +402,13 @@
   <div class="reveal">
     <p class="section-label">Get in Touch</p>
     <h2 class="section-title">Let's <em>connect</em></h2>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" action="https://formspree.io/f/mojklwkk" method="POST">
       <div class="form-row">
-        <div class="field"><label for="fname">Your Name</label><input type="text" id="fname" placeholder="Jane Smith"></div>
-        <div class="field"><label for="email">Email</label><input type="email" id="email" placeholder="jane@email.com"></div>
+        <div class="field"><label for="fname">Your Name</label><input type="text" id="fname" name="name" placeholder="Jane Smith"></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="jane@email.com"></div>
       </div>
-      <div class="field"><label for="subject">Subject</label><input type="text" id="subject" placeholder="e.g. Collaboration, Opportunity, Just saying hi..."></div>
-      <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Tell me what's on your mind..."></textarea></div>
+      <div class="field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="e.g. Collaboration, Opportunity, Just saying hi..."></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me what's on your mind..."></textarea></div>
       <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
     </form>
   </div>
@@ -449,16 +449,6 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Sending…'; btn.style.opacity = '.7';
-    setTimeout(() => {
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#2a7c8a';
-      btn.style.color = '#f5f2ec';
-    }, 1200);
-  }
 </script>
 </body>
 </html>
